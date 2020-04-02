@@ -60,8 +60,8 @@ def main():
     ]
 
     db = pandas.read_csv(src / 'musicnet_metadata.csv')
-    traindir = src / 'musicnet/train_data'
-    testdir = src / 'musicnet/test_data'
+    traindir = src / 'train_data'
+    testdir = src / 'test_data'
 
     for (ensemble, composer) in domains:
         fid_list = db[(db["composer"] == composer) & (db["ensemble"] == ensemble)].id.tolist()
