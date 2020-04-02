@@ -15,7 +15,7 @@ were modified to match our architecture as detailed in the paper.
 - [Samples](https://musictranslation.github.io/)
 - [Setup](#setup)
 - [Training](#training)
-- [Inference](#training)
+- [Inference](#inference)
 
 ## Setup
 
