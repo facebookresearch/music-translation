@@ -117,7 +117,7 @@ __device__ void nv_wavenet_persistent_prev_block(int row, int start_sample, int 
 #pragma unroll
                     for (int b=0; b<BATCH_UNROLL; b++) {
                         // add conditioning and bias in pipelined calculation
-                        conditioning[b] = L[((sample+1-start_sample)/COND_REPEAT)*num_layers*batch_size*2*R + layer*batch_size*2*R + (batch_offset+b)*2*R + row];
+                        conditioning[b] = L[((sample-start_sample)/COND_REPEAT)*num_layers*batch_size*2*R + layer*batch_size*2*R + (batch_offset+b)*2*R + row];
                         conditioning[b] += B[layer*2*R+row];
                     }
                     int sample_offset = (sample + 1 - dilation) % (maxDilation+1); // note: doing _prev calculation for next sample, pipelined with the rest
