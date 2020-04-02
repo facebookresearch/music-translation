@@ -54,7 +54,7 @@ Requirements:
 
 ### Pretrained Models
 
-Pretrained models are available [here](https://dl.fbaipublicfiles.com/music-translation/pretrained_musicnet.zip).
+Pretrained models are available [here](https://dl.fbaipublicfiles.com/music-translation/pretrained_musicnet.zip). Downloaded models should be saved under ```checkpoints/pretrained_musicnet```
 
 ## Training
 
@@ -91,7 +91,12 @@ We provide both interactive/offline generation scripts based on [nv-wavenet CUDA
 1. ``notebooks/Generate.ipynb`` - interactive generation.   
 2. ``sample.sh <checkpiont name> "<decoders ids>"`` - samples short segments of audio from each dataset and converts to 
 the domains the method was trained on. Running the script will create a ``result\DATE`` directory, with subfolder for 
-each decoder. See ``src/run_on_files.py`` for more details.
+each decoder. See ``src/run_on_files.py`` for more details. 
+
+For example, to use the pretrained models:
+```
+sample.sh pretrained_musicnet "0 1 2 3 4 5"
+```
 
 In addition, we provide python-based generation:
 1. ``sample_py.sh <checkpiont name> "<decoders ids>"`` - same as 2. above.
